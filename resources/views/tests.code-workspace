@@ -1,0 +1,38 @@
+{
+	"folders": [
+		{
+			"path": "../../tests"
+		},
+		{
+			"path": "../../vendor"
+		},
+		{
+			"path": "../../app"
+		},
+		{
+			"path": "../../bootstrap"
+		},
+		{
+			"path": "../../config"
+		},
+		{
+			"path": "../../database"
+		},
+		{
+			"path": "../../lang"
+		},
+		{
+			"path": "../../public"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../routes"
+		},
+		{
+			"path": "../../storage"
+		}
+	],
+	"settings": {}
+}
