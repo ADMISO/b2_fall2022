@@ -47,6 +47,17 @@ Route::post('admin/user-login',[AuthController::class, 'userLogin']);
 Route::middleware(['CheckIfLogin'])->group(function () {
     Route::get('admin/users',[UserController::class, 'allUsers']);
     Route::get('admin/approve/{userId}', [UserController::class, 'approve']);
+
+    Route::middleware(['IsTeacher'])->group(function(){
+        Route::get('admin/give-marks', function(){
+            echo 'Giving marks as teacher';
+        });
+    });
+    Route::middleware(['IsStudent'])->group(function(){
+        Route::get('admin/my-marks', function(){
+            echo 'Viewing marks as student';
+        });
+    });
 });
 
 

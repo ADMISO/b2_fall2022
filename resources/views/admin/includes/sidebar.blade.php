@@ -11,14 +11,14 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="">
+    <a class="nav-link" href="{{ url('admin/my-marks') }}">
       <i class="bi bi-grid"></i>
       <span>My Marks</span>
     </a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="">
+    <a class="nav-link" href="{{ url('admin/give-marks') }}">
       <i class="bi bi-grid"></i>
       <span>Give Marks</span>
     </a>
