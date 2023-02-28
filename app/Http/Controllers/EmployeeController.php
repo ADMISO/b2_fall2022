@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Employee;
 use DB;
+use Image;
 class EmployeeController extends Controller
 {
     public function create(){
@@ -50,6 +51,23 @@ class EmployeeController extends Controller
         if($obj->save()){
             echo 'Successfully Inserted';
         } */
+
+        // Image
+        $originalImage = $req->file('profile_pic');
+        $image = Image::make($originalImage); // Image = Intervention
+        $extension = $originalImage->getClientOriginalExtension();
+        $name = time().'.'.$extension; // 1215212.png
+
+        $thumbnailPath = public_path().'/thumbnail/';
+        $originalPath = public_path().'/images/';
+
+        $image->save($originalPath.$name);
+
+        $image->resize(100,100);
+        $image->save($thumbnailPath.$name);
+        // Image
+
+
         DB::table('employees')->insert([
             'name' => $req->name,
             'email' => $req->name,
@@ -58,7 +76,8 @@ class EmployeeController extends Controller
             'department'=> $req->department,
             'gender'=> $gender,
             'address'=> $req->address,
-            'status'=> $status 
+            'status'=> $status,
+            'profile_pic'=>$name
         ]);
         echo 'Successfully Inserted';
     }

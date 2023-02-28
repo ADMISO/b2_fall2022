@@ -24,6 +24,7 @@
                     <th>Department</th>
                     <th>Gender</th>
                     <th>Status</th>
+                    <th>Profile Pic</th>
                     <th>Address</th>
                     <th>Action</th>
                 </tr>
@@ -43,6 +44,9 @@
                         @else 
                         <span class="badge badge-danger">Inactive</span>
                         @endif
+                    </td>
+                    <td>
+                        <img src="{{ asset('thumbnail/'.$e->profile_pic) }}" alt="">
                     </td>
                     <td>{{ $e->address }}</td>
                     <td>

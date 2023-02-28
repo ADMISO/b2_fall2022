@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <h3>Create Employee</h3>
-        <form action="{{ url('store-employee') }}" method="post">
+        <form action="{{ url('store-employee') }}" enctype="multipart/form-data" method="post">
             @csrf 
             <div class="form-group">
                 <label for="">Name</label>
@@ -69,6 +69,10 @@
                         <input type="checkbox" class="form-check-input" name="status" value="1">Status
                     </label>
                 </div>
+            </div>
+            <div class="form-group">
+                <label for="">Upload Image</label>
+                <input type="file" class="form-control" name="profile_pic">
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Save">
