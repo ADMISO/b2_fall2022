@@ -8,7 +8,21 @@
       <i class="bi bi-grid"></i>
       <span>Dashboard</span>
     </a>
-  </li><!-- End Dashboard Nav -->
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="">
+      <i class="bi bi-grid"></i>
+      <span>My Marks</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="">
+      <i class="bi bi-grid"></i>
+      <span>Give Marks</span>
+    </a>
+  </li>
 
   <li class="nav-item">
     <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">

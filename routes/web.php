@@ -46,5 +46,7 @@ Route::post('admin/user-login',[AuthController::class, 'userLogin']);
 
 Route::middleware(['CheckIfLogin'])->group(function () {
     Route::get('admin/users',[UserController::class, 'allUsers']);
+    Route::get('admin/approve/{userId}', [UserController::class, 'approve']);
 });
+
 
