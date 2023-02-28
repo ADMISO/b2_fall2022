@@ -58,6 +58,7 @@ Route::middleware(['CheckIfLogin'])->group(function () {
             echo 'Viewing marks as student';
         });
     });
+    Route::get('signout',[AuthController::class, 'signout']);
 });
 
 
