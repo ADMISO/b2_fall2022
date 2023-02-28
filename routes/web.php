@@ -44,4 +44,7 @@ Route::post('admin/user-register',[AuthController::class, 'userRegister']);
 Route::get('admin/login',[AuthController::class, 'login']);
 Route::post('admin/user-login',[AuthController::class, 'userLogin']);
 
-Route::get('admin/users',[UserController::class, 'allUsers']);
+Route::middleware(['CheckIfLogin'])->group(function () {
+    Route::get('admin/users',[UserController::class, 'allUsers']);
+});
+
