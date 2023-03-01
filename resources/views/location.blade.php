@@ -17,7 +17,7 @@
             @csrf
             <div class="form-group">
                 <label for="">Select Division</label>
-                <select name="division" id="" class="form-control">
+                <select name="division" id="division" class="form-control">
                     <option value="">Select Division</option>
                     @foreach($divisions as $d)
                         <option value="{{ $d->id }}">{{ $d->name }}</option>
@@ -25,7 +25,11 @@
                 </select>
             </div>
             <div class="form-group">
+                <label for="">Select District</label>
+                <select name="district" id="district" class="form-control">
+                    <option value="">Select District</option>
 
+                </select>
             </div>
             <div class="form-group">
 
