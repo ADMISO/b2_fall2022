@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <h2>Location</h2>
-        <form action="" method="post">
+        <form action="" id="teacherEntry" method="post">
             @csrf
             <div class="form-group">
                 <label for="">Select Division</label>
@@ -32,7 +32,11 @@
                 </select>
             </div>
             <div class="form-group">
-
+                <label for="">Teacher Name</label>
+                <input type="text" name="name" id="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" id="submit">Save</button>
             </div>
         </form>
         
@@ -58,6 +62,22 @@
                     $("#district").html(str);
                 }
               });
+            });
+            $("#submit").click(function(e){
+                e.preventDefault();
+                $.ajax({
+                    url: 'http://127.0.0.1:8000/api/store-teacher/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'division': $("#division").val(),
+                        'district' : $("#district").val(),
+                        'teacher_name': $("#name").val(),
+                    },
+                    success: function(res){
+                        console.log(res);
+                    }
+                });
             });
         });
     </script>

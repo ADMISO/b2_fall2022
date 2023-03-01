@@ -19,3 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('districts/{divisionId}', [LocationController::class,'getDistrictsByDivisionId']);
+Route::post('store-teacher',[LocationController::class, 'store']);
