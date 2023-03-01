@@ -6,6 +6,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LocationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,5 +61,7 @@ Route::middleware(['CheckIfLogin'])->group(function () {
     });
     Route::get('signout',[AuthController::class, 'signout']);
 });
+
+Route::get('location',[LocationController::class, 'location']);
 
 
