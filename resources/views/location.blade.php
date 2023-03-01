@@ -27,8 +27,8 @@
             <div class="form-group">
                 <label for="">Select District</label>
                 <select name="district" id="district" class="form-control">
-                    <option value="">Select District</option>
-
+                    
+                    
                 </select>
             </div>
             <div class="form-group">
@@ -37,5 +37,29 @@
         </form>
         
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#division").change(function(){
+              var division = $(this).val();
+              $("#district").empty();
+              $.ajax({
+                url: 'http://127.0.0.1:8000/api/districts/'+division,
+                type: 'GET',
+                dataType: 'json',
+                success: function(response){
+                    var districts = response.districts;
+                    var len = districts.length;
+
+                    var str = '<option value="">Select District</option>';
+                    for(var i=0; i< len; i++){
+                        str += '<option value="'+districts[i].id+'">'+districts[i].name+'</option>';
+                    }
+                    $("#district").html(str);
+                }
+              });
+            });
+        });
+    </script>
 </body>
 </html>
